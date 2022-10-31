@@ -23,7 +23,7 @@ namespace DivingApp
 
         public void RunApp()
         {
-            FillUpTeam();
+            FillUpTeams();
 
             Greeting();
             CollectInfo();
