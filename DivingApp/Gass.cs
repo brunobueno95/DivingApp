@@ -11,7 +11,7 @@ namespace DivingApp
       public  string TypeOfGas { get; set; }
       public  int NitrogenPercentage { get; set; }
       
-     public  int OxigenPercentage { get; set; }
+     public  double OxigenPercentage { get; set; }
 
         
 

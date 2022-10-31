@@ -48,7 +48,7 @@ namespace DivingApp
             Console.WriteLine($"{DName} whats your Certification level? Choose one of the below.");
             Console.WriteLine("1 - OpenWater");
             Console.WriteLine("2 - Advance");
-            Console.WriteLine("1 - DiveMaster");
+            Console.WriteLine("3 - DiveMaster");
             var input = Console.ReadLine();
             var level = ValidateInput.validateInputLevel(input);
             

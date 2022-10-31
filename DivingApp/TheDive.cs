@@ -37,7 +37,7 @@ namespace DivingApp
 
         public double CalculatePP02()
         {
-            var PP02 = Pressure * (WhosDiving.gassChoice.OxigenPercentage/100);
+            var PP02 = Pressure * (WhosDiving.gassChoice.OxigenPercentage / 100);
             return PP02;
         }
 
@@ -53,15 +53,18 @@ namespace DivingApp
                 Console.WriteLine($" {WhosDiving.DiverName} cant do this dive because it exceeds the amount of air contained on the {WhosDiving.equipment.Type}");
                 CanDoThisDive = false;
             }
+            
             else if (CalculatePP02() > 1.4)
             {
                 Console.WriteLine($" {WhosDiving.DiverName} cant do this dive because it exceeds the maximum safe PP02 of 1.4");
+                Console.WriteLine($"this dive has {Pressure} atm of pressure and {WhosDiving.DiverName} will achieve {CalculatePP02()} of PP02");
 
                 CanDoThisDive = false;
             }
             else
             {
                 Console.WriteLine($"{WhosDiving.DiverName} Can do this Dive");
+                
                 CanDoThisDive = true;
             }
         }
@@ -93,6 +96,7 @@ namespace DivingApp
                 ChoosingDive();
             }
         }
+
         //public double CalculateNitrogen()
         //{
         // without a table or computer havent yet figured out whats the mathematic algoritm

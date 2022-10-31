@@ -75,12 +75,13 @@ namespace DivingApp
             {
                 Console.WriteLine("You chose team 1, press enter to see who from this team can do the dive");
                 Console.ReadLine();
-                foreach (var team in App.team1)
+                foreach (var teamMember in App.team1)
                 {
                    
                     var depth = App.ClientDive.Depth;
                     var timeMnts = App.ClientDive.TimeMnts;
-                    TheDive checkIfCan = new TheDive(team,depth,timeMnts);
+                    TheDive checkIfCan = new TheDive(teamMember, depth,timeMnts);
+                    
                 }
                
             }
@@ -88,12 +89,12 @@ namespace DivingApp
             {
                 Console.WriteLine("You chose team 2, press enter to see who from this team can do the dive");
                 Console.ReadLine();
-                foreach (var team in App.team2)
+                foreach (var teamMember in App.team2)
                 {
 
                     var depth = App.ClientDive.Depth;
                     var timeMnts = App.ClientDive.TimeMnts;
-                    TheDive checkIfCan = new TheDive(team, depth, timeMnts);
+                    TheDive checkIfCan = new TheDive(teamMember, depth, timeMnts);
                 }
 
 
@@ -102,11 +103,11 @@ namespace DivingApp
             {
                 Console.WriteLine("You chose team 3, press enter to see who from this team can do the dive");
                 Console.ReadLine();
-                foreach (var team in App.team3)
+                foreach (var teamMember in App.team3)
                 {
                     var depth = App.ClientDive.Depth;
                     var timeMnts = App.ClientDive.TimeMnts;
-                    TheDive checkIfCan = new TheDive(team, depth, timeMnts);
+                    TheDive checkIfCan = new TheDive(teamMember, depth, timeMnts);
                 }
 
 
