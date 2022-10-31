@@ -45,26 +45,26 @@ namespace DivingApp
         {
             if(Depth > WhosDiving.DepthAllowedtoGo)
             {
-                Console.WriteLine($" {WhosDiving.DiverName} is not certified fot this depth");
+                Console.WriteLine($" {WhosDiving.DiverName} is not certified fot this depth\n");
                 CanDoThisDive = false;
             }
             else if(CalculateAirConsomption() > WhosDiving.equipment.TotalAmountofGas)
             {
-                Console.WriteLine($" {WhosDiving.DiverName} cant do this dive because it exceeds the amount of air contained on the {WhosDiving.equipment.Type}");
+                Console.WriteLine($" {WhosDiving.DiverName} cant do this dive because it exceeds the amount of air contained on the {WhosDiving.equipment.Type} \n");
                 CanDoThisDive = false;
             }
             
             else if (CalculatePP02() > 1.4)
             {
                 Console.WriteLine($" {WhosDiving.DiverName} cant do this dive because it exceeds the maximum safe PP02 of 1.4");
-                Console.WriteLine($"this dive has {Pressure} atm of pressure and {WhosDiving.DiverName} will achieve {CalculatePP02()} of PP02");
+                Console.WriteLine($"this dive has {Pressure} atm of pressure and {WhosDiving.DiverName} will achieve {CalculatePP02()} of PP02\n");
 
                 CanDoThisDive = false;
             }
             else
             {
-                Console.WriteLine($"{WhosDiving.DiverName} Can do this Dive");
-                
+                Console.WriteLine($"{WhosDiving.DiverName} Can do this Dive\n");
+
                 CanDoThisDive = true;
             }
         }
@@ -75,25 +75,30 @@ namespace DivingApp
             return totalConsomption;
         }
 
-        public static void ChoosingDive()
+        public static TheDive ChoosingDive()
         {
-            Console.Clear();
+            
 
             Console.WriteLine("Write down the depth u want to dive, remember we are currently only " +
                 "doing recreational dives, so max depth 40m");
             var depth = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Now choose the time in mnts of how long the dive will be.");
             var timeMnts = Convert.ToInt32(Console.ReadLine());
-            App.ClientDive = new TheDive(App.Client, depth, timeMnts);
+            TheDive ClientDive = new TheDive(App.Client, depth, timeMnts);
+            return ClientDive;
 
         }
 
-        public static  void cantDoTheDive()
+        public static  void cantDoTheDive(TheDive obj)
         {
-            if (App.ClientDive.CanDoThisDive == false)
+            if (obj.CanDoThisDive == false)
             {
                 Console.WriteLine("You need to choose a different dive");
                 ChoosingDive();
+            }
+            else
+            {
+                Console.WriteLine("");
             }
         }
 
