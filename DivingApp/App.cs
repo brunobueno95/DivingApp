@@ -79,7 +79,7 @@ namespace DivingApp
 
         
 
-        public void FillUpTeam()
+        public void FillUpTeams()
         {
 
             team1.Add(new Diver("James", "Open Water", new Equipment("single tank", 200), new Air()));
@@ -87,7 +87,17 @@ namespace DivingApp
             team1.Add(new Diver("Gabriel", "Advance", new Equipment("single tank", 300), new Air()));
             team1.Add(new Diver("Bruno", "DiveMaster", new Equipment("single tank", 200), new Nitrox(32)));
 
-          
+            team2.Add(new Diver("Adam", "Open Water", new Equipment("single tank", 200), new Air()));
+            team2.Add(new Diver("Sandra", "DiveMaster", new Equipment("double tanks", 200), new Nitrox(36)));
+            team2.Add(new Diver("Juan", "Advance", new Equipment("single tank", 300), new Air()));
+            team2.Add(new Diver("Vanessa", "DiveMaster", new Equipment("single tank", 200), new Nitrox(32)));
+
+            team3.Add(new Diver("Peter", "Open Water", new Equipment("single tank", 200), new Air()));
+            team3.Add(new Diver("Kai", "DiveMaster", new Equipment("double tanks", 200), new Nitrox(36)));
+            team3.Add(new Diver("Tonja", "Advance", new Equipment("single tank", 300), new Air()));
+            team3.Add(new Diver("Kelly", "DiveMaster", new Equipment("single tank", 200), new Nitrox(32)));
+
+
 
         }
 
